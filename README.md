@@ -22,95 +22,57 @@ Best Easy Way for In-App Update Implementation
 
 ## Getting Started
 
-> Step 1. Add the JitPack repository to your build file 
+> Step 1. Make Sure Add Internet Permissiton in Manifests - 
 ```
-allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 ```
 
-> Step 2. Add the dependency
+> Step 2. Add the dependency - 
 ```
-	dependencies {
-	        implementation 'com.github.AtikulSoftware:quickadmob:1.0.0'
-	}
+implementation 'com.google.android.play:app-update:2.1.0'	
 ```
 
-Make Sure Add Internet Permissiton & Metadata in Manifests
+> Step 3. Above On Create Bundle is where we declare various variables - 
 ```
- <!-- Internet Permission-->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    
-     <!-- Meta Data -->
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713" />
-    
+private int REQUEST_CODE = 11;
 ```
 
-> Setp 3. Load Banner Ads
+> Setp 4. Anywhere in the On Create Bundle - 
 ```
-  <!-- Admob Banner Ads-->
-    <LinearLayout
-        android:id="@+id/showBanner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical" />
-```
-Banner Ads Java Code
-```
-// Set Banner Ad Unit ID
- AdsUnit.BANNER = "ca-app-pub-3940256099942544/6300978111";
-
- // Set Banner Ads
-        Admob.setBanner(findViewById(R.id.showBanner),MainActivity.this);
-```
-
-> Step 4. Interstitial Ads
-```
-// Set Interstitial Ads Unit ID
- AdsUnit.INTERSTITIAL = "ca-app-pub-3940256099942544/1033173712";
- 
- // Load Interstitial Ads
- Admob.loadInterstitialAds(this);
- 
- 
- // Button Click Show Interstitial Ads
- // Show Ads
- new Admob(new onDismiss() {
-                @Override
-                public void onDismiss() {
-                    // When Ads Close Take Action
-                    // 1. Go to New Activity what you want Actually
+  //In-App Udpates Implementation (1st part)------------------------------------------------------ 
+        AppUpdateManager appUpdateManager = AppUpdateManagerFactory.create(MainActivity.this);
+        Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
+        appUpdateInfoTask.addOnSuccessListener(new OnSuccessListener<AppUpdateInfo>() {
+            @Override
+            public void onSuccess(AppUpdateInfo result) {
+                if (result.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+                        & result.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)){
+                    try {
+                        appUpdateManager.startUpdateFlowForResult(result,AppUpdateType.IMMEDIATE,MainActivity.this,REQUEST_CODE);
+                    } catch (IntentSender.SendIntentException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
-            }).ShowInterstitial(MainActivity.this,true);
- 
- ```
- 
- > Step 5. Reworded Ads
+
+            }
+        });
 ```
-// Set Reworded Ads Unit ID
-AdsUnit.REWARDED = "ca-app-pub-3940256099942544/5224354917";
-
- // Load Reworded Ads
- Admob.loadRewordedAds(this);
-
-// Button Click Show Reworded Ads
- // Show Ads
-  new Admob(new onDismiss() {
-                @Override
-                public void onDismiss() {
-                    // When Ads Close Take Action
-                    // 1. Give Some Reword
-
-                }
-            }).ShowRewarded(MainActivity.this,true);
+> Step 5. Just below the last second bracket - 
 ```
-## Authors
+//In-App Udpates Implementation (2nd part)------------------------------------------------------ 
+ @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE){
+            Toast.makeText(MainActivity.this,"Start Download",Toast.LENGTH_SHORT).show();
+            if (requestCode!=RESULT_OK){
+                Log.d("mmm","Update Fail"+resultCode);
+            }
+        }
+    }
+```
 
-* **Atikul Islam** - *Android Software Developer* - [Atikul Islam](https://github.com/AtikulSoftware) - *Free Library*
+## In Cooperation
+
+* **Md. Hasan Mahmud** - *Android Application Developer* - *Free Library*
