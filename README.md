@@ -1,7 +1,7 @@
 <br/>
 <p align="center">
   <a href="https://github.com/AppBondTech/Easy_InAppUpdate">
-    <img src="https://mdhasanmahmud.000webhostapp.com/inappupdate/appbondtech.jpg" alt="Logo" width="90" height="90">
+    <img src="https://mdhasanmahmud.000webhostapp.com/inappupdate/appbondtech.jpg" alt="Logo" width="150" height="150">
   </a>
 
   <h3 align="center">In-App Update</h3>
@@ -10,32 +10,19 @@
     Best Easy Way for In-App Update Implementation
     <br/>
     <br/>
-    <a href=""><strong> For Details »</strong></a>
+    <a href=""><strong> For Details Video Tutorial »</strong></a>
     <br/>
     <br/>
     
-    .
-    
-    .
-    
-  </p>
-</p>
-
-![Downloads](https://img.shields.io/github/downloads/AtikulSoftware/quickadmob/total) ![Contributors](https://img.shields.io/github/contributors/AtikulSoftware/quickadmob?color=dark-green) ![Issues](https://img.shields.io/github/issues/AtikulSoftware/quickadmob) ![License](https://img.shields.io/github/license/AtikulSoftware/quickadmob) 
-
-
-
 ## Table Of Contents
 
-* [About the Project](#about-the-project)
 * [Getting Started](#getting-started)
-* [Authors](#authors)
 
 ## About The Project
 
-![Screen Shot](https://avatars.githubusercontent.com/u/111883800?v=4)
+![Screen Shot](https://mdhasanmahmud.000webhostapp.com/inappupdate/eF05z.png)
 
-Best practice with admob ad implementation 
+Best Easy Way for In-App Update Implementation
 
 ## Getting Started
 
