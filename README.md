@@ -18,8 +18,6 @@
 
 ![Screen Shot](https://mdhasanmahmud.000webhostapp.com/inappupdate/eF05z.png)
 
-Best Easy Way for In-App Update Implementation
-
 ## Getting Started
 
 > Step 1. Make Sure Add Internet Permissiton in Manifests - 
