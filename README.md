@@ -4,7 +4,7 @@
     <img src="https://mdhasanmahmud.000webhostapp.com/inappupdate/appbondtech.jpg" alt="Logo" width="150" height="150">
   </a>
 
-  <h3 align="center">In-App Update</h3>
+  <h3 align="center">In-App Update(java)</h3>
 
   <p align="center">
     Best Easy Way for In-App Update Implementation
