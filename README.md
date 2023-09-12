@@ -13,11 +13,7 @@
     <a href=""><strong> For Details Video Tutorial »</strong></a>
     <br/>
     <br/>
-    
-## Table Of Contents
-
-* [Getting Started](#getting-started)
-
+	  
 ## About The Project
 
 ![Screen Shot](https://mdhasanmahmud.000webhostapp.com/inappupdate/eF05z.png)
