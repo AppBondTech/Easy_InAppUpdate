@@ -57,7 +57,7 @@ private int REQUEST_CODE = 11;
         });
 ```
 > Step 5. Just below the last second bracket - 
-``
+```
 //In-App Udpates Implementation (2nd part)------------------------------------------------------ 
  @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -69,7 +69,7 @@ private int REQUEST_CODE = 11;
             }
         }
     }
-``
+```
 
 ## In Cooperation
 
