@@ -1,7 +1,7 @@
 <br/>
 <p align="center">
   <a href="https://github.com/AppBondTech/Easy_InAppUpdate">
-    <img src="https://mdhasanmahmud.000webhostapp.com/inappupdate/appbondtech.jpg" alt="Logo" width="150" height="150">
+    <img src="https://mdhasanmahmud.000webhostapp.com/inappupdate/play%20with%20android.png" alt="Logo" width="150" height="150">
   </a>
 
   <h3 align="center">In-App Update(java)</h3>
