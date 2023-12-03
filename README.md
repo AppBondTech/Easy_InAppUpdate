@@ -56,7 +56,7 @@ private int REQUEST_CODE = 11;
             }
         });
 ```
- Step 5. Just below the last second bracket - 
+>> Step 5. Just below the last second bracket - 
 ```
 //In-App Udpates Implementation (2nd part)------------------------------------------------------ 
  @Override
